@@ -1,0 +1,25 @@
+{
+	"name": "@liquicode/lib-tokenize",
+	"version": "0.0.1",
+	"description": "A NodeJS library to tokenize strings",
+	"homepage": "http://lib-tokenize.liquicode.com",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/liquicode/lib-tokenize.git"
+	},
+	"private": true,
+	"dependencies": {},
+	"devDependencies": {
+		"mocha": "^7.1.2",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11",
+		"webpack-node-externals": "^1.7.2"
+	},
+	"scripts": {
+		"run-tests": "mocha -u bdd tests",
+		"010-webpack": "bash build/webpack/010-webpack.sh",
+		"810-s3-sync-docs": "bash build/s3/810-s3-sync-docs.sh",
+		"900-npm-publish-public": "bash build/npm/900-npm-publish-public.sh"
+	}
+}
