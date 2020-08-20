@@ -9,6 +9,36 @@
 		"url": "https://github.com/liquicode/lib-tokenize.git"
 	},
 	"private": true,
+	"authors": [
+		{
+			"name": "Andre' G. Bowlin",
+			"email": "agbowlin@gmail.com",
+			"homepage": "http://liquicode.com"
+		}
+	],
+	"main": "lib/lib-tokenize.js",
+	"files": [
+		"README.md",
+		"LICENSE",
+		"lib/*",
+		"docs/*",
+		"tests/*"
+	],
+	"ignore": [
+		".*",
+		"node_modules",
+		"build",
+		"~scratch"
+	],
+	"keywords": [
+		"javascript",
+		"js",
+		"nodejs",
+		"node",
+		"token",
+		"tokenize",
+		"tokenizer"
+	],
 	"dependencies": {},
 	"devDependencies": {
 		"mocha": "^7.1.2",
