@@ -207,7 +207,7 @@ describe( `Tokenize Tests`,
 
 
 		//---------------------------------------------------------------------
-		it( `should detect keywords, case sesnsitive`,
+		it( `should detect keywords, case sensitive`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
@@ -232,7 +232,7 @@ describe( `Tokenize Tests`,
 
 
 		//---------------------------------------------------------------------
-		it( `should detect keywords, case insesnsitive`,
+		it( `should detect keywords, case insensitive`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
@@ -240,12 +240,12 @@ describe( `Tokenize Tests`,
 				tokenizer.keywords_are_case_sensitive = false;
 				LIB_ASSERT.notEqual( tokenizer, null );
 				tokenizer.keywords.push( 'Let' );
-				let tokens = tokenizer.tokenize( "Let X = 3.14;" );
+				let tokens = tokenizer.tokenize( "let X = 3.14;" );
 				LIB_ASSERT.notEqual( tokens, null );
 				// console.log( tokens );
 				let expected_tokens =
 					[
-						{ token: "Let", type: LIB_TOKENIZE.TokenTypes.keyword, at: 0 },
+						{ token: "let", type: LIB_TOKENIZE.TokenTypes.keyword, at: 0 },
 						{ token: "X", type: LIB_TOKENIZE.TokenTypes.identifier, at: 4 },
 						{ token: "=", type: LIB_TOKENIZE.TokenTypes.symbol, at: 6 },
 						{ token: "3.14", type: LIB_TOKENIZE.TokenTypes.numeric, at: 8 },
