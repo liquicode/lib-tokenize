@@ -1,6 +1,6 @@
 {
 	"name": "@liquicode/lib-tokenize",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "A NodeJS library to tokenize strings",
 	"homepage": "http://lib-tokenize.liquicode.com",
 	"license": "MIT",
@@ -8,7 +8,6 @@
 		"type": "git",
 		"url": "https://github.com/liquicode/lib-tokenize.git"
 	},
-	"private": true,
 	"authors": [
 		{
 			"name": "Andre' G. Bowlin",

@@ -182,4 +182,78 @@ describe( `Tokenize Tests`,
 			} );
 
 
+		//---------------------------------------------------------------------
+		it( `should discard whitespace`,
+			async function ()
+			{
+				let tokenizer = LIB_TOKENIZE.NewTokenizer();
+				tokenizer.discard_whitespace = true;
+				LIB_ASSERT.notEqual( tokenizer, null );
+				tokenizer.keywords.push( 'let' );
+				let tokens = tokenizer.tokenize( "let X = 3.14;" );
+				LIB_ASSERT.notEqual( tokens, null );
+				// console.log( tokens );
+				let expected_tokens =
+					[
+						{ token: "let", type: LIB_TOKENIZE.TokenTypes.keyword, at: 0 },
+						{ token: "X", type: LIB_TOKENIZE.TokenTypes.identifier, at: 4 },
+						{ token: "=", type: LIB_TOKENIZE.TokenTypes.symbol, at: 6 },
+						{ token: "3.14", type: LIB_TOKENIZE.TokenTypes.numeric, at: 8 },
+						{ token: ";", type: LIB_TOKENIZE.TokenTypes.symbol, at: 12 },
+					];
+				LIB_ASSERT.deepStrictEqual( tokens, expected_tokens );
+				return;
+			} );
+
+
+		//---------------------------------------------------------------------
+		it( `should detect keywords, case sesnsitive`,
+			async function ()
+			{
+				let tokenizer = LIB_TOKENIZE.NewTokenizer();
+				tokenizer.discard_whitespace = true;
+				tokenizer.keywords_are_case_sensitive = true;
+				LIB_ASSERT.notEqual( tokenizer, null );
+				tokenizer.keywords.push( 'Let' );
+				let tokens = tokenizer.tokenize( "let X = 3.14;" );
+				LIB_ASSERT.notEqual( tokens, null );
+				// console.log( tokens );
+				let expected_tokens =
+					[
+						{ token: "let", type: LIB_TOKENIZE.TokenTypes.identifier, at: 0 },
+						{ token: "X", type: LIB_TOKENIZE.TokenTypes.identifier, at: 4 },
+						{ token: "=", type: LIB_TOKENIZE.TokenTypes.symbol, at: 6 },
+						{ token: "3.14", type: LIB_TOKENIZE.TokenTypes.numeric, at: 8 },
+						{ token: ";", type: LIB_TOKENIZE.TokenTypes.symbol, at: 12 },
+					];
+				LIB_ASSERT.deepStrictEqual( tokens, expected_tokens );
+				return;
+			} );
+
+
+		//---------------------------------------------------------------------
+		it( `should detect keywords, case insesnsitive`,
+			async function ()
+			{
+				let tokenizer = LIB_TOKENIZE.NewTokenizer();
+				tokenizer.discard_whitespace = true;
+				tokenizer.keywords_are_case_sensitive = false;
+				LIB_ASSERT.notEqual( tokenizer, null );
+				tokenizer.keywords.push( 'Let' );
+				let tokens = tokenizer.tokenize( "Let X = 3.14;" );
+				LIB_ASSERT.notEqual( tokens, null );
+				// console.log( tokens );
+				let expected_tokens =
+					[
+						{ token: "Let", type: LIB_TOKENIZE.TokenTypes.keyword, at: 0 },
+						{ token: "X", type: LIB_TOKENIZE.TokenTypes.identifier, at: 4 },
+						{ token: "=", type: LIB_TOKENIZE.TokenTypes.symbol, at: 6 },
+						{ token: "3.14", type: LIB_TOKENIZE.TokenTypes.numeric, at: 8 },
+						{ token: ";", type: LIB_TOKENIZE.TokenTypes.symbol, at: 12 },
+					];
+				LIB_ASSERT.deepStrictEqual( tokens, expected_tokens );
+				return;
+			} );
+
+
 	} );
