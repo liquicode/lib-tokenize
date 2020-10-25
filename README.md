@@ -3,6 +3,12 @@
 
 A library for tokenizing strings.
 
+`lib-tokenize` can identify keywords, symbols, string literals,
+numerics, and whitespace within a string.
+The `tokenize` function will parse a given string and return an
+array of `Token` objects which detail each token, it's type, and
+location within the string.
+
 
 ## Getting Started
 
