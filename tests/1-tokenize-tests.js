@@ -16,9 +16,9 @@ describe( `Tokenize Tests`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				let tokens = tokenizer.tokenize();
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				LIB_ASSERT.equal( tokens.length, 0 );
 				return;
 			} );
@@ -29,9 +29,9 @@ describe( `Tokenize Tests`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				let tokens = tokenizer.tokenize( "" );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				LIB_ASSERT.equal( tokens.length, 0 );
 				return;
 			} );
@@ -42,9 +42,9 @@ describe( `Tokenize Tests`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				let tokens = tokenizer.tokenize( "Abracadabra" );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				LIB_ASSERT.equal( tokens.length, 1 );
 				LIB_ASSERT.equal( tokens[ 0 ].token, "Abracadabra" );
 				LIB_ASSERT.equal( tokens[ 0 ].type, LIB_TOKENIZE.TokenTypes.identifier );
@@ -58,10 +58,10 @@ describe( `Tokenize Tests`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				tokenizer.keywords.push( 'let' );
 				let tokens = tokenizer.tokenize( "let X = 3.14;" );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				// console.log( tokens );
 				let expected_tokens =
 					[
@@ -84,9 +84,9 @@ describe( `Tokenize Tests`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				let tokens = tokenizer.tokenize( "=" );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				let expected_tokens =
 					[
 						{ token: "=", type: LIB_TOKENIZE.TokenTypes.symbol, at: 0 },
@@ -101,9 +101,9 @@ describe( `Tokenize Tests`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				let tokens = tokenizer.tokenize( "\t \n" );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				let expected_tokens =
 					[
 						{ token: "\t \n", type: LIB_TOKENIZE.TokenTypes.whitespace, at: 0 },
@@ -118,9 +118,9 @@ describe( `Tokenize Tests`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				let tokens = tokenizer.tokenize( `"What is the answer?"` );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				let expected_tokens =
 					[
 						{ token: `"What is the answer?"`, type: LIB_TOKENIZE.TokenTypes.literal, at: 0 },
@@ -135,9 +135,9 @@ describe( `Tokenize Tests`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				let tokens = tokenizer.tokenize( `"What's the answer?"` );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				let expected_tokens =
 					[
 						{ token: `"What's the answer?"`, type: LIB_TOKENIZE.TokenTypes.literal, at: 0 },
@@ -148,13 +148,13 @@ describe( `Tokenize Tests`,
 
 
 		//---------------------------------------------------------------------
-		it( `should tokenize a literal with an escaped character`,
+		it( `should tokenize a literal with an escape character`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				let tokens = tokenizer.tokenize( `'What\\'s the answer?'` );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				let expected_tokens =
 					[
 						{ token: `'What\\'s the answer?'`, type: LIB_TOKENIZE.TokenTypes.literal, at: 0 },
@@ -165,17 +165,35 @@ describe( `Tokenize Tests`,
 
 
 		//---------------------------------------------------------------------
-		it( `should tokenize a literal with an alternate escaped character`,
+		it( `should tokenize a literal with an alternate escape character`,
 			async function ()
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				tokenizer.literal_escape_chars += '~';
 				let tokens = tokenizer.tokenize( `'What~'s the answer?'` );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				let expected_tokens =
 					[
 						{ token: `'What~'s the answer?'`, type: LIB_TOKENIZE.TokenTypes.literal, at: 0 },
+					];
+				LIB_ASSERT.deepStrictEqual( tokens, expected_tokens );
+				return;
+			} );
+
+
+		//---------------------------------------------------------------------
+		it( `should tokenize a literal with a self escaping duplicate character`,
+			async function ()
+			{
+				let tokenizer = LIB_TOKENIZE.NewTokenizer();
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
+				tokenizer.self_escape_literal_delimiters = true;
+				let tokens = tokenizer.tokenize( `"What's ""the"" answer?"` );
+				LIB_ASSERT.notStrictEqual( tokens, null );
+				let expected_tokens =
+					[
+						{ token: `"What's ""the"" answer?"`, type: LIB_TOKENIZE.TokenTypes.literal, at: 0 },
 					];
 				LIB_ASSERT.deepStrictEqual( tokens, expected_tokens );
 				return;
@@ -188,10 +206,10 @@ describe( `Tokenize Tests`,
 			{
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
 				tokenizer.discard_whitespace = true;
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				tokenizer.keywords.push( 'let' );
 				let tokens = tokenizer.tokenize( "let X = 3.14;" );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				// console.log( tokens );
 				let expected_tokens =
 					[
@@ -213,10 +231,10 @@ describe( `Tokenize Tests`,
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
 				tokenizer.discard_whitespace = true;
 				tokenizer.keywords_are_case_sensitive = true;
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				tokenizer.keywords.push( 'Let' );
 				let tokens = tokenizer.tokenize( "let X = 3.14;" );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				// console.log( tokens );
 				let expected_tokens =
 					[
@@ -238,10 +256,10 @@ describe( `Tokenize Tests`,
 				let tokenizer = LIB_TOKENIZE.NewTokenizer();
 				tokenizer.discard_whitespace = true;
 				tokenizer.keywords_are_case_sensitive = false;
-				LIB_ASSERT.notEqual( tokenizer, null );
+				LIB_ASSERT.notStrictEqual( tokenizer, null );
 				tokenizer.keywords.push( 'Let' );
 				let tokens = tokenizer.tokenize( "let X = 3.14;" );
-				LIB_ASSERT.notEqual( tokens, null );
+				LIB_ASSERT.notStrictEqual( tokens, null );
 				// console.log( tokens );
 				let expected_tokens =
 					[
