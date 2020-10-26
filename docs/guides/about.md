@@ -14,15 +14,15 @@ location within the string.
 
 Install via NPM:
 ```bash
-npm install @liquicode/lib-tokenizer
+npm install @liquicode/lib-tokenize
 ```
 
 
 ## Quick Overview
 
-Include the tokenizer library in your source code:
+Include the tokenize library in your source code:
 ```js
-let LIB_TOKENIZE = require( '@liquicode/lib-tokenizer' );
+let LIB_TOKENIZE = require( '@liquicode/lib-tokenize' );
 ```
 
 Instantiate a new `Tokenizer` object:
