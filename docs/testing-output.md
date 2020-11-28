@@ -21,7 +21,7 @@
     ✓ should detect keywords, case insensitive
 
 
-  14 passing (6ms)
+  14 passing (8ms)
 
 
 ```

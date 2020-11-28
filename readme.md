@@ -1,5 +1,5 @@
 
-# lib-tokenize (v0.1.2)
+# lib-tokenize (v0.1.3)
 
 A library for tokenizing strings.
 
