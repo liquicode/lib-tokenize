@@ -1,7 +1,7 @@
 "use strict";
 
 
-const LIB_TOKENIZE = require( '../lib/lib-tokenize.js' );
+const LIB_TOKENIZE = require( '../src/lib-tokenize.js' );
 const LIB_ASSERT = require( 'assert' );
 
 

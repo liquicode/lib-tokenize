@@ -15,19 +15,22 @@
 			"homepage": "http://liquicode.com"
 		}
 	],
-	"main": "lib/lib-tokenize.js",
+	"main": "src/lib-tokenize.js",
 	"files": [
-		"README.md",
+		"readme.md",
 		"LICENSE",
-		"lib/*",
+		"VERSION",
+		"dist/*",
 		"docs/*",
+		"src/*",
 		"tests/*"
 	],
 	"ignore": [
 		".*",
+		"~*",
+		"bower_components",
 		"node_modules",
-		"build",
-		"~scratch"
+		"build"
 	],
 	"keywords": [
 		"javascript",
@@ -49,6 +52,6 @@
 		"run-tests": "mocha -u bdd tests",
 		"010-webpack": "bash build/webpack/010-webpack.sh",
 		"810-s3-sync-docs": "bash build/s3/810-s3-sync-docs.sh",
-		"900-npm-publish-public": "bash build/npm/900-npm-publish-public.sh"
+		"910-release-version": "node build/custom/910-release-version.js"
 	}
 }
