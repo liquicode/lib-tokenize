@@ -17,7 +17,7 @@ exports.ParseCommandLine =
 		let tokens = tokenizer.tokenize( Text );
 
 		// Parse the tokens into an arguments object.
-		let arguments = {};
+		let args = {};
 		while ( tokens.length > 0 )
 		{
 			// Remove all leading '-' characters.
@@ -36,7 +36,7 @@ exports.ParseCommandLine =
 			tokens.splice( 0, 1 );
 
 			// Create a new entry in our args object and give it an initial value of `true`.
-			arguments[ arg_name ] = true;
+			args[ arg_name ] = true;
 			if ( !tokens.length ) { break; }
 
 			// Check fpr start of another argument.
@@ -56,10 +56,10 @@ exports.ParseCommandLine =
 			{
 				throw new Error( `Unexpected value at position ${tokens[ 0 ].at}. Expected an identifier, string literal, or numeric.` );
 			}
-			arguments[ arg_name ] = tokens[ 0 ].token;
+			args[ arg_name ] = tokens[ 0 ].token;
 			tokens.splice( 0, 1 );
 		}
 
 		// Return the arguments object.
-		return arguments;
+		return args;
 	};
