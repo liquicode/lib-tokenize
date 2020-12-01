@@ -1,6 +1,6 @@
 {
 	"name": "@liquicode/lib-tokenize",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "A NodeJS library to tokenize strings",
 	"homepage": "http://lib-tokenize.liquicode.com",
 	"license": "MIT",

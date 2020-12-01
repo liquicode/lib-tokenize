@@ -2,7 +2,7 @@
 
 ![logo](media/lib-tokenize.png)
 
-# lib-tokenize <small>(v0.1.4)</small>
+# lib-tokenize <small>(v0.1.5)</small>
 
 <hr>
 
