@@ -49,7 +49,7 @@
 		"webpack-node-externals": "^1.7.2"
 	},
 	"scripts": {
-		"run-tests": "mocha -u bdd tests",
+		"run-tests": "mocha -u bdd tests/*.js --timeout 0 --slow 10 --colors",
 		"010-webpack": "bash build/webpack/010-webpack.sh",
 		"810-s3-sync-docs": "bash build/s3/810-s3-sync-docs.sh",
 		"910-release-version": "node build/custom/910-release-version.js"

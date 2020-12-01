@@ -12,10 +12,16 @@
 			"args": [
 				"-u",
 				"bdd",
-				"tests",
+				"tests/*.js",
+				"--timeout",
+				"0",
+				"--slow",
+				"10",
+				"--colors",
 			],
 			"internalConsoleOptions": "openOnSessionStart",
 			"outputCapture": "std",
+			"cwd": "${workspaceFolder}",
 		},
 	]
 }

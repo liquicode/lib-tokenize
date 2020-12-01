@@ -3,7 +3,7 @@
 let text = `0001,"John","O'Malley","The ""Boss""","ABC-1234"`;
 
 // Get an instance of a tokenizer.
-const LIB_TOKENIZE = require( '../lib/lib-tokenize.js' );
+const LIB_TOKENIZE = require( '@liquicode/lib-tokenizer' );
 let tokenizer = LIB_TOKENIZE.NewTokenizer();
 
 // Configure the tokenizer to handle csv text.

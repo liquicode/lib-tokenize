@@ -8,9 +8,18 @@
 
 <hr>
 
-- References
+- Parsing Functions
 
-	- [Library Reference](guides/lib-tokenize.md)
+	- [ParseCommandLine](parsers/ParseCommandLine.md)
+	- [ParseCsvString](parsers/ParseCsvString.md)
+
+<hr>
+
+- Samples
+
+	- [Tokenize a CSV String](samples/tokenize-csv-string.md)
+	- [Tokenize Psuedo Code](samples/tokenize-psuedo-code.md)
+	- [Tokenize a Simple Sentence](samples/tokenize-simple-sentence.md)
 
 <hr>
 
