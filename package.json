@@ -18,7 +18,7 @@
 	"main": "src/lib-tokenize.js",
 	"files": [
 		"readme.md",
-		"LICENSE",
+		"license.md",
 		"VERSION",
 		"dist/*",
 		"docs/*",

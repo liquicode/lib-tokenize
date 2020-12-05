@@ -4,25 +4,31 @@
 
 - lib-tokenize Docs
 
-	- [About](guides/readme.md)
+	- [About](external/readme.md)
 
 <hr>
 
-- Parsing Functions
+- Library API
 
-	- [ParseCommandLine](parsers/ParseCommandLine.md)
-	- [ParseCsvString](parsers/ParseCsvString.md)
+	- [Tokenizer Object](api/Tokenizer.md)
+	- [Token Object](api/Token.md)
+
+	- Parsing Functions
+
+		- [ParseCommandLine](api/parsers/ParseCommandLine.md)
+		- [ParseCsvString](api/parsers/ParseCsvString.md)
 
 <hr>
 
 - Samples
 
-	- [Tokenize a CSV String](samples/tokenize-csv-string.md)
-	- [Tokenize Psuedo Code](samples/tokenize-psuedo-code.md)
-	- [Tokenize a Simple Sentence](samples/tokenize-simple-sentence.md)
+	- [Tokenize a CSV String](api/samples/tokenize-csv-string.md)
+	- [Tokenize Psuedo Code](api/samples/tokenize-psuedo-code.md)
+	- [Tokenize a Simple Sentence](api/samples/tokenize-simple-sentence.md)
 
 <hr>
 
 - Information
 
-	- [Testing Output](testing-output.md)
+	- [Testing Output](external/testing-output.md)
+	- [Software License](external/license.md)

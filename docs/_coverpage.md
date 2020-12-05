@@ -20,7 +20,7 @@
  -->
 
 [GitHub](https://github.com/liquicode/template-lib)
-[Get Started](guides/readme.md)
+[Get Started](external/readme.md)
 
 
 <!-- background image -->
